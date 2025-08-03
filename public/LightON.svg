@@ -1,0 +1,44 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+  <defs>
+    <!-- Brighter Glow gradients -->
+    <radialGradient id="coreGlow" cx="50%" cy="60%" r="30%">
+      <stop offset="0%" stop-color="#fff176" stop-opacity="1" />
+      <stop offset="100%" stop-color="#fef08a" stop-opacity="0.4" />
+    </radialGradient>
+
+    <radialGradient id="softGlow" cx="50%" cy="85%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#fef08a" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Stronger Glow blur -->
+    <filter id="glowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <!-- <feGaussianBlur stdDeviation="8" result="blurred" /> -->
+      <feGaussianBlur stdDeviation="7" result="blurred" />
+      <feMerge>
+        <feMergeNode in="blurred" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Clip to avoid upward glow leakage -->
+    <clipPath id="lampGlowClip">
+      <rect x="0" y="32" width="64" height="50" />
+    </clipPath>
+  </defs>
+
+  <!-- Cord -->
+  <line x1="32" y1="2" x2="32" y2="16" stroke="#000" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Cap -->
+  <rect x="28" y="16" width="8" height="6" rx="2" fill="#1f1f1f" stroke="#000" stroke-width="2" />
+
+  <!-- Lamp Body -->
+  <path d="M20 22h24l6 12H14z" fill="#1f1f1f" stroke="#000" stroke-width="2" />
+
+  <!-- Enhanced Glows (clipped below) -->
+  <g clip-path="url(#lampGlowClip)">
+    <ellipse cx="32" cy="42" rx="12" ry="7" fill="url(#coreGlow)" filter="url(#glowBlur)" />
+    <ellipse cx="32" cy="48" rx="32" ry="28" fill="url(#softGlow)" filter="url(#glowBlur)" />
+  </g>
+</svg>
