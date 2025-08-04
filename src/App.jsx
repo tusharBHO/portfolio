@@ -1,4 +1,3 @@
-// App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
@@ -6,12 +5,11 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Certifications from './Pages/Certifications';
 import Contact from './Pages/Contact';
-import Resume from './Pages/Resume'
+import Resume from './Pages/Resume';
 import Projects from './Pages/Projects';
-import Skills from './Pages/Skills'
+import Skills from './Pages/Skills';
 import ScrollToTopButton from './components/ScrollToTopButton';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
@@ -30,17 +28,16 @@ const App = () => {
 
         <ScrollToTopButton />
 
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
+        {/* ✅ Add hot-toast container */}
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            style: {
+              background: "#333",
+              color: "#fff",
+            },
+            duration: 3000,
+          }}
         />
       </div>
     </Router>

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
-import { ToastContainer, toast } from "react-toastify";
+import toast from "react-hot-toast"; // ✅ react-hot-toast
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
 import MouseGlowTrail from '../components/MouseGlowTrail';
@@ -26,7 +26,7 @@ const Contact = () => {
                 setLoading(false);
             })
             .catch(() => {
-                toast.error("Failed to send message. Please try again!");
+                toast.error("❌ Failed to send message. Please try again.");
                 setLoading(false);
             });
     };
@@ -47,11 +47,11 @@ const Contact = () => {
     return (
         <>
             <MouseGlowTrail />
-            <section ref={sectionRef}
+
+            <section
+                ref={sectionRef}
                 className="min-h-screen bg-white dark:bg-darkBg py-10 px-4 sm:px-6 lg:px-12 overflow-x-hidden"
             >
-                <ToastContainer position="top-center" autoClose={3000} />
-
                 <motion.h1
                     initial={{ opacity: 0, y: -50, scale: 0.95 }}
                     animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
@@ -64,7 +64,6 @@ const Contact = () => {
                 </motion.h1>
 
                 <div className="flex flex-col lg:flex-row items-start justify-center gap-6 lg:gap-16 max-w-7xl mx-auto">
-
                     {/* Left Info Section */}
                     <div className="w-full lg:w-1/3 space-y-2 sm:space-y-6">
                         {[
@@ -79,15 +78,10 @@ const Contact = () => {
                                 content: "+91 9302497195",
                             },
                             {
-                                icon: <FaMapMarkerAlt />,
-                                title: "Location",
-                                content: "Nagpur, Maharashtra, India",
-                            },
-                            {
                                 icon: null,
                                 title: "Connect with me",
                                 content: (
-                                    <div className="flex gap-5 text-xl sm:text-2xl text-[#00ffa0] mt-2">
+                                    <div className="flex gap-5 text-xl sm:text-2xl text-[#202523] dark:text-[#ffffff] mt-2">
                                         <a href="https://www.linkedin.com/in/tushar-bhoyar-a7049a250" target="_blank" rel="noreferrer">
                                             <FaLinkedin className="hover:text-[#0077b5]" />
                                         </a>
@@ -104,12 +98,12 @@ const Contact = () => {
                                 initial="hidden"
                                 animate={isInView ? "visible" : "hidden"}
                                 custom={i}
-                                className="bg-white dark:bg-[#2c2c2c] p-3 sm:p-4  rounded-xl shadow-md"
+                                className="bg-white dark:bg-[#2c2c2c] p-3 sm:p-4  rounded-xl shadow-lg"
                             >
-                                <h3 className="text-xs sm:text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1 sm:mb-2 flex items-center gap-2">
+                                <h3 className="text-xs sm:text-lg font-semibold text-gray-800 dark:text-gray-400 mb-1 sm:mb-2 flex items-center gap-2">
                                     {item.icon} {item.title}
                                 </h3>
-                                <div className="text-gray-600 dark:text-gray-400 text-xs sm:text-base">
+                                <div className="text-gray-600 dark:text-[#ffffff] text-xs sm:text-base">
                                     {item.content}
                                 </div>
                             </motion.div>
@@ -121,7 +115,7 @@ const Contact = () => {
                         initial={{ x: 200, rotateZ: 8, opacity: 0 }}
                         animate={isInView ? { x: 0, rotateZ: 0, opacity: 1 } : {}}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="w-full lg:w-2/3 bg-white dark:bg-[#2c2c2c] px-4 sm:px-8 py-4 sm:py-6 rounded-xl shadow-lg"
+                        className="w-full lg:w-2/3 bg-white dark:bg-[#2c2c2c] px-4 sm:px-8 py-4 sm:py-6 rounded-xl shadow-xl"
                     >
                         <h2 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800 dark:text-white">
                             Let's get in touch
@@ -137,7 +131,7 @@ const Contact = () => {
                                     required
                                     type="text"
                                     placeholder="Your Name"
-                                    className="w-full sm:mt-1 px-4 py-1 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-[#1f1f1f] text-gray-900 dark:text-gray-100 focus:ring-[#00ffa0] focus:border-[#00ffa0] outline-none"
+                                    className="w-full sm:mt-1 px-4 py-1 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-md bg-white dark:bg-[#1f1f1f] text-gray-900 dark:text-gray-100 focus:ring-[#00ffa0] focus:border-[#00ffa0] outline-none"
                                 />
                             </div>
 
@@ -147,7 +141,7 @@ const Contact = () => {
                                     required
                                     type="email"
                                     placeholder="you@example.com"
-                                    className="w-full sm:mt-1 px-4 py-1 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-[#1f1f1f] text-gray-900 dark:text-gray-100 focus:ring-[#00ffa0] focus:border-[#00ffa0] outline-none"
+                                    className="w-full sm:mt-1 px-4 py-1 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-md bg-white dark:bg-[#1f1f1f] text-gray-900 dark:text-gray-100 focus:ring-[#00ffa0] focus:border-[#00ffa0] outline-none"
                                 />
                             </div>
 
@@ -157,14 +151,14 @@ const Contact = () => {
                                     rows="4"
                                     required
                                     placeholder="Write your message..."
-                                    className="w-full sm:mt-1 px-4 py-1 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-[#1f1f1f] text-gray-900 dark:text-gray-100 focus:ring-[#00ffa0] focus:border-[#00ffa0] outline-none resize-none"
+                                    className="w-full sm:mt-1 px-4 py-1 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-md bg-white dark:bg-[#1f1f1f] text-gray-900 dark:text-gray-100 focus:ring-[#00ffa0] focus:border-[#00ffa0] outline-none resize-none"
                                 />
                             </div>
 
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="bg-[#00ffa0] hover:bg-[#00cc88] transition text-black font-semibold px-4 sm:px-6 py-1 sm:py-2 rounded"
+                                className="bg-[#ffffff] hover:bg-[#ced3d1] dark:bg-[#dbd9d9] dark:hover:bg-white border-2 border-gray-300 transition text-black font-semibold px-4 sm:px-6 py-1 sm:py-2 rounded shadow-xl"
                             >
                                 {loading ? "Sending..." : "Send Message"}
                             </button>

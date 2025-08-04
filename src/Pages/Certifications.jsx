@@ -1,3 +1,4 @@
+// src/Pages/Certifications.jsx
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -57,7 +58,7 @@ function chunkArray(arr, size) {
     );
 }
 
-const CertificationCard = ({ title, issuer, date, description, logo }) => (
+const CertificationCard = ({ title, issuer, date, description, logo, image }) => (
     <div className="w-full h-[100%] p-3 flex flex-col justify-stretch border-2 rounded-2xl shadow-md border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 transition-colors duration-300">
         <img src={logo} alt="Logo" className="h-32 rounded-xl object-cover mb-3" />
         <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-1">{title}</h2>
@@ -66,7 +67,7 @@ const CertificationCard = ({ title, issuer, date, description, logo }) => (
         </span>
         <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 flex-1">{description}</p>
         <div className="flex justify-between items-center border-t border-gray-300 dark:border-gray-700 pt-2">
-            <a href="#" className="text-blue-600 dark:text-blue-400 text-sm">View Certificate →</a>
+            <a href={image} className="text-blue-600 dark:text-blue-400 text-sm">View Certificate →</a>
             <span className="text-sm text-gray-500 dark:text-gray-400">{date}</span>
         </div>
     </div>
@@ -97,6 +98,9 @@ export default function BurstToLineWithCertCards() {
         containerRef.current = el;
         viewRef(el);
     };
+
+    const hasAnimatedRef = useRef(false);
+    const BURST_DURATION = 1200; // Or whatever you want
 
     // Set center for burst origin
     useEffect(() => {
@@ -129,14 +133,19 @@ export default function BurstToLineWithCertCards() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Trigger animation on scroll into view
+    // Trigger animation on scroll into view only once
     useEffect(() => {
-        if (inView) {
+        if (inView && !hasAnimatedRef.current && center.x !== 0 && center.y !== 0) {
+            hasAnimatedRef.current = true;
             setBursting(true);
-            const t = setTimeout(() => setBursting(false), 1000);
-            return () => clearTimeout(t);
+
+            const timeout = setTimeout(() => {
+                setBursting(false);
+            }, BURST_DURATION);
+
+            return () => clearTimeout(timeout);
         }
-    }, [inView]);
+    }, [inView, center]);
 
     const certRows = chunkArray(certifications, cardsPerRow);
     const rowsCount = certRows.length;
@@ -166,7 +175,7 @@ export default function BurstToLineWithCertCards() {
         <>
             <MouseGlowTrail />
 
-            <div className="py-10">
+            <div className="pt-10">
                 <h1 className="mt-10 text-4xl sm:text-5xl font-bold mb-8 p-2
                 bg-[linear-gradient(91.36deg,#ECA658_0%,#F391A6_13.02%,#E188C3_25.52%,#A58DE3_37.5%,#56ABEC_49.48%,#737EB7_63.02%,#C8638C_72.92%,#DD5D57_84.38%,#DF6C51_97.92%)]
                 bg-[length:300%_300%] animate-gradient bg-clip-text text-transparent w-full text-center z-10">

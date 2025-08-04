@@ -110,7 +110,7 @@ const Skills = () => {
                                 <motion.img
                                     src={card.img}
                                     alt={card.role}
-                                    className="w-20 h-20 m-auto mt-5 mb-10"
+                                    className={`w-20 h-20 m-auto mt-5 mb-10 ${card.img.includes('prompt') ? 'dark:invert' : ''} shadow-lg`}
                                     initial={{ opacity: 0, y: -20 }}
                                     animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
                                     transition={{ delay: i * 0.3 + 0.2, duration: 0.4 }}
