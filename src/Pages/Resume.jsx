@@ -53,7 +53,7 @@ const Resume = () => {
                             Take a look at my resume snapshot. Download the full version to explore all details.
                         </p>
                         <a
-                            href="/resume.docx"
+                            href="/resume.pdf"
                             download
                             onClick={handleDownload}
                             className="font-semibold px-6 py-2 rounded text-center transition border border-red-300 dark:border-gray-600 hover:bg-[#b2d3ff] hover:text-black dark:hover:bg-[#90bfff] dark:hover:text-black

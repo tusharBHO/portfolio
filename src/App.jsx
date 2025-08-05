@@ -10,6 +10,7 @@ import Projects from './Pages/Projects';
 import Skills from './Pages/Skills';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import { Toaster } from 'react-hot-toast';
+import NotFound from './Pages/NotFound'; // Import NotFound page
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/resume" element={<Resume />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <ScrollToTopButton />
