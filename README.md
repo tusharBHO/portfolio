@@ -46,8 +46,8 @@
 * FastAPI ML backend + full-stack integration
 * Real-world agriculture use case
 
-👉 Live: https://pashugyan.vercel.app/
-👉 Code: <your-link>
+* Live: https://pashugyan.vercel.app/
+* Code: https://github.com/tusharBHO/pda
 
 ---
 
@@ -57,8 +57,8 @@
 * Streaming responses & clean UI
 * Real-world AI application architecture
 
-👉 Live: https://curiosityoftb.vercel.app/
-👉 Code: <your-link>
+* Live: https://curiosityoftb.vercel.app/
+* Code: https://github.com/tusharBHO/perplexity-Clone
 
 ---
 
