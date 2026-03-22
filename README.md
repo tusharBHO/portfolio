@@ -1,12 +1,75 @@
-# React + Vite
+# 👋 Hi, I'm <Your Name>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Full Stack Developer | Building AI-powered web applications
+💡 Focused on scalable systems, clean architecture & real-world products
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔥 About Me
 
-## Expanding the ESLint configuration
+* 🧠 Strong in Data Structures & Problem Solving
+* ⚡ Building full-stack apps with modern tech
+* 🤖 Exploring AI integrations (LLMs, automation, APIs)
+* 🎯 Goal: Build impactful, production-ready systems
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+### 💻 Frontend
+
+* React.js, Next.js, Tailwind CSS
+
+### ⚙️ Backend
+
+* Node.js, Express.js
+
+### 🗄 Database
+
+* MongoDB, PostgreSQL, Supabase
+
+### 🤖 AI / Tools
+
+* OpenAI APIs, Gemini, REST APIs
+
+### 🔧 Tools
+
+* Git, GitHub, Docker, Postman
+
+---
+
+## 🚀 Featured Projects
+
+### 🔹 PashuGyan 🐄
+
+* AI-powered cattle/buffalo breed prediction
+* FastAPI ML backend + full-stack integration
+* Real-world agriculture use case
+
+👉 Live: https://pashugyan.vercel.app/
+👉 Code: <your-link>
+
+---
+
+### 🔹 AI Platform (Perplexity × ChatGPT Clone)
+
+* Multi-LLM integration (OpenAI, Gemini)
+* Streaming responses & clean UI
+* Real-world AI application architecture
+
+👉 Live: https://curiosityoftb.vercel.app/
+👉 Code: <your-link>
+
+---
+
+## 📫 Connect With Me
+
+* 💼 LinkedIn: linkedin.com/in/tushar-bhoyar-a7049a250
+* 🌐 Portfolio: portfolio-079.netlify.app
+* 📧 Email: tbhoyar079@gmail.com
+
+---
+
+## ⚡ Fun Fact
+
+I don’t just build projects — I build systems that solve real problems.
